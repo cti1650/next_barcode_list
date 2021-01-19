@@ -6,6 +6,10 @@ export default async(req, res) => {
         const data = await response.json();
         res.status(200).json(data);
     }else{
-        res.status(200).json({});
+        res.status(400).json({
+            "message":null,
+            "results":[],
+            "status":400
+        });
     }
 }

@@ -1,7 +1,7 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
  
-class CodeLoop extends Component {
+export default class CodeLoop extends Component {
   constructor(props) {
     super(props);
     this.state = {
@@ -40,6 +40,3 @@ class CodeLoop extends Component {
     );
   }
 }
- 
-const rootElement = document.getElementById("root");
-ReactDOM.render(<CodeLoop />, rootElement);

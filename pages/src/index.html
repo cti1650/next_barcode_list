@@ -1,0 +1,520 @@
+
+
+<!DOCTYPE html>
+<html lang="ja">
+    <head>
+        <meta name="バーコード一覧" content="index">
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <meta name="apple-mobile-web-app-capable" content="yes">
+        <meta name="apple-mobile-web-app-status-bar-style" content="black">
+        <meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0">
+        <title>バーコード一覧</title>
+        <link href="https://use.fontawesome.com/releases/v5.0.8/css/all.css" rel="stylesheet">
+        <style>
+            *{
+                -webkit-appearance: none;
+            }
+            html{
+                width:100%;
+                max-width:700px;
+                background-color:#DDFFFF;
+            }
+            table{
+                width:100%;
+                background-color:#FFFFFF;
+            }
+            .clr{
+                padding-top:10px;
+                text-align:right;
+            }
+            .clr button,.clr input[type='submit']{
+                font-size:1.3rem;
+                background-color:#FFFFFF;
+            }
+            .up{
+              padding-top:10px;
+              text-align:left;
+            }
+            .up button,.up input{
+                font-size:16px;
+                background-color:#FFFFFF;
+            }
+            /* .qrcode-text {padding-right:1.7em; margin-right:0}
+            .qrcode-text-btn {display:inline-block; background:url(//dab1nmslvvntp.cloudfront.net/wp-content/uploads/2017/07/1499401426qr_icon.svg) 50% 50% no-repeat; height:1em; width:1.7em; margin-left:-1.7em; cursor:pointer}
+            .qrcode-text-btn > input[type=file] {position:absolute; overflow:hidden; width:1px; height:1px; opacity:0} */
+        </style>
+        <!-- <script src="./lib.js"></script> -->
+        <!-- <script>
+            function openQRCamera(node) {
+            var reader = new FileReader();
+            reader.onload = function() {
+              node.value = "";
+              qrcode.callback = function(res) {
+                if(res instanceof Error) {
+                  alert("No QR code found. Please make sure the QR code is within the camera's frame and try again.");
+                } else {
+                  node.parentNode.previousElementSibling.value = res;
+                }
+              };
+              qrcode.decode(reader.result);
+            };
+            reader.readAsDataURL(node.files[0]);
+          }
+
+          function showQRIntro() {
+            return confirm("Use your camera to take a picture of a QR code.");
+          }
+        </script> -->
+    </head>
+    <body>
+        <h1>バーコード棚卸補助</h1>
+        <div class="up">
+            <h2>データ手入力</h2>
+            <div style="font-size:16px;">
+                <form action="./index.php" method="get">
+                  <input type="textbox" name="code" size="20" />
+                  <input type="submit" value="追加" />
+                </form>
+            </div>
+        </div>
+        <!-- <div class="up">
+            <h2>データ手入力</h2>
+            <input type=text size=16 placeholder="Tracking Code" class=qrcode-text><label class=qrcode-text-btn><input type=file accept="image/*" capture=environment onclick="return showQRIntro();" onchange="openQRCamera(this);" tabindex=-1></label>
+            <input type=button value="Go" disabled>
+        </div> -->
+        <h2>データ一覧</h2>
+        <table border="1" cellspacing="1" cellpadding="1">
+            <tr>
+                <th>No</th>
+                <th>code</th>
+                <th>date</th>
+                <th>memo</th>
+                <th>削除</th>
+            </tr>
+            <tr>
+                <td>1</td>
+                <td>B180800218</td>
+                <td>2021-01-18 09:19:39</td>
+                <td></td>
+                <td><form action="./index.php" method="get">
+                  <input type="hidden" name="del" value="B180800218" />
+                  <input type="submit" style="width:100%;height:100%;" value="実行" />
+                </form></td>
+            </tr>
+            <tr>
+                <td>2</td>
+                <td>B180800185</td>
+                <td>2021-01-18 09:19:40</td>
+                <td></td>
+                <td><form action="./index.php" method="get">
+                  <input type="hidden" name="del" value="B180800185" />
+                  <input type="submit" style="width:100%;height:100%;" value="実行" />
+                </form></td>
+            </tr>
+            <tr>
+                <td>3</td>
+                <td>B180800136</td>
+                <td>2021-01-18 09:19:42</td>
+                <td></td>
+                <td><form action="./index.php" method="get">
+                  <input type="hidden" name="del" value="B180800136" />
+                  <input type="submit" style="width:100%;height:100%;" value="実行" />
+                </form></td>
+            </tr>
+            <tr>
+                <td>4</td>
+                <td>B180900078</td>
+                <td>2021-01-18 09:19:44</td>
+                <td></td>
+                <td><form action="./index.php" method="get">
+                  <input type="hidden" name="del" value="B180900078" />
+                  <input type="submit" style="width:100%;height:100%;" value="実行" />
+                </form></td>
+            </tr>
+            <tr>
+                <td>5</td>
+                <td>B140900287</td>
+                <td>2021-01-18 09:19:47</td>
+                <td></td>
+                <td><form action="./index.php" method="get">
+                  <input type="hidden" name="del" value="B140900287" />
+                  <input type="submit" style="width:100%;height:100%;" value="実行" />
+                </form></td>
+            </tr>
+            <tr>
+                <td>6</td>
+                <td>B180800176</td>
+                <td>2021-01-18 09:19:49</td>
+                <td></td>
+                <td><form action="./index.php" method="get">
+                  <input type="hidden" name="del" value="B180800176" />
+                  <input type="submit" style="width:100%;height:100%;" value="実行" />
+                </form></td>
+            </tr>
+            <tr>
+                <td>7</td>
+                <td>B180800135</td>
+                <td>2021-01-18 09:19:53</td>
+                <td></td>
+                <td><form action="./index.php" method="get">
+                  <input type="hidden" name="del" value="B180800135" />
+                  <input type="submit" style="width:100%;height:100%;" value="実行" />
+                </form></td>
+            </tr>
+            <tr>
+                <td>8</td>
+                <td>B180800126</td>
+                <td>2021-01-18 09:19:58</td>
+                <td></td>
+                <td><form action="./index.php" method="get">
+                  <input type="hidden" name="del" value="B180800126" />
+                  <input type="submit" style="width:100%;height:100%;" value="実行" />
+                </form></td>
+            </tr>
+            <tr>
+                <td>9</td>
+                <td>B090700558</td>
+                <td>2021-01-18 09:20:02</td>
+                <td></td>
+                <td><form action="./index.php" method="get">
+                  <input type="hidden" name="del" value="B090700558" />
+                  <input type="submit" style="width:100%;height:100%;" value="実行" />
+                </form></td>
+            </tr>
+            <tr>
+                <td>10</td>
+                <td>B100800057</td>
+                <td>2021-01-18 09:20:09</td>
+                <td></td>
+                <td><form action="./index.php" method="get">
+                  <input type="hidden" name="del" value="B100800057" />
+                  <input type="submit" style="width:100%;height:100%;" value="実行" />
+                </form></td>
+            </tr>
+            <tr>
+                <td>11</td>
+                <td>B180800216</td>
+                <td>2021-01-18 09:20:13</td>
+                <td></td>
+                <td><form action="./index.php" method="get">
+                  <input type="hidden" name="del" value="B180800216" />
+                  <input type="submit" style="width:100%;height:100%;" value="実行" />
+                </form></td>
+            </tr>
+            <tr>
+                <td>12</td>
+                <td>B100800086</td>
+                <td>2021-01-18 09:20:15</td>
+                <td></td>
+                <td><form action="./index.php" method="get">
+                  <input type="hidden" name="del" value="B100800086" />
+                  <input type="submit" style="width:100%;height:100%;" value="実行" />
+                </form></td>
+            </tr>
+            <tr>
+                <td>13</td>
+                <td>B180800217</td>
+                <td>2021-01-18 09:20:17</td>
+                <td></td>
+                <td><form action="./index.php" method="get">
+                  <input type="hidden" name="del" value="B180800217" />
+                  <input type="submit" style="width:100%;height:100%;" value="実行" />
+                </form></td>
+            </tr>
+            <tr>
+                <td>14</td>
+                <td>B090700559</td>
+                <td>2021-01-18 09:20:21</td>
+                <td></td>
+                <td><form action="./index.php" method="get">
+                  <input type="hidden" name="del" value="B090700559" />
+                  <input type="submit" style="width:100%;height:100%;" value="実行" />
+                </form></td>
+            </tr>
+            <tr>
+                <td>15</td>
+                <td>B090700570</td>
+                <td>2021-01-18 09:20:23</td>
+                <td></td>
+                <td><form action="./index.php" method="get">
+                  <input type="hidden" name="del" value="B090700570" />
+                  <input type="submit" style="width:100%;height:100%;" value="実行" />
+                </form></td>
+            </tr>
+            <tr>
+                <td>16</td>
+                <td>B150500006</td>
+                <td>2021-01-18 09:20:27</td>
+                <td></td>
+                <td><form action="./index.php" method="get">
+                  <input type="hidden" name="del" value="B150500006" />
+                  <input type="submit" style="width:100%;height:100%;" value="実行" />
+                </form></td>
+            </tr>
+            <tr>
+                <td>17</td>
+                <td>B090700610</td>
+                <td>2021-01-18 09:20:33</td>
+                <td></td>
+                <td><form action="./index.php" method="get">
+                  <input type="hidden" name="del" value="B090700610" />
+                  <input type="submit" style="width:100%;height:100%;" value="実行" />
+                </form></td>
+            </tr>
+            <tr>
+                <td>18</td>
+                <td>B180900060</td>
+                <td>2021-01-18 09:20:39</td>
+                <td></td>
+                <td><form action="./index.php" method="get">
+                  <input type="hidden" name="del" value="B180900060" />
+                  <input type="submit" style="width:100%;height:100%;" value="実行" />
+                </form></td>
+            </tr>
+            <tr>
+                <td>19</td>
+                <td>B180900069</td>
+                <td>2021-01-18 09:20:41</td>
+                <td></td>
+                <td><form action="./index.php" method="get">
+                  <input type="hidden" name="del" value="B180900069" />
+                  <input type="submit" style="width:100%;height:100%;" value="実行" />
+                </form></td>
+            </tr>
+            <tr>
+                <td>20</td>
+                <td>B090700595</td>
+                <td>2021-01-18 09:20:43</td>
+                <td></td>
+                <td><form action="./index.php" method="get">
+                  <input type="hidden" name="del" value="B090700595" />
+                  <input type="submit" style="width:100%;height:100%;" value="実行" />
+                </form></td>
+            </tr>
+            <tr>
+                <td>21</td>
+                <td>B090700596</td>
+                <td>2021-01-18 09:20:48</td>
+                <td></td>
+                <td><form action="./index.php" method="get">
+                  <input type="hidden" name="del" value="B090700596" />
+                  <input type="submit" style="width:100%;height:100%;" value="実行" />
+                </form></td>
+            </tr>
+            <tr>
+                <td>22</td>
+                <td>B090700592</td>
+                <td>2021-01-18 09:20:51</td>
+                <td></td>
+                <td><form action="./index.php" method="get">
+                  <input type="hidden" name="del" value="B090700592" />
+                  <input type="submit" style="width:100%;height:100%;" value="実行" />
+                </form></td>
+            </tr>
+            <tr>
+                <td>23</td>
+                <td>B090700593</td>
+                <td>2021-01-18 09:20:53</td>
+                <td></td>
+                <td><form action="./index.php" method="get">
+                  <input type="hidden" name="del" value="B090700593" />
+                  <input type="submit" style="width:100%;height:100%;" value="実行" />
+                </form></td>
+            </tr>
+            <tr>
+                <td>24</td>
+                <td>B090700641</td>
+                <td>2021-01-18 09:20:54</td>
+                <td></td>
+                <td><form action="./index.php" method="get">
+                  <input type="hidden" name="del" value="B090700641" />
+                  <input type="submit" style="width:100%;height:100%;" value="実行" />
+                </form></td>
+            </tr>
+            <tr>
+                <td>25</td>
+                <td>B100500004</td>
+                <td>2021-01-18 09:20:57</td>
+                <td></td>
+                <td><form action="./index.php" method="get">
+                  <input type="hidden" name="del" value="B100500004" />
+                  <input type="submit" style="width:100%;height:100%;" value="実行" />
+                </form></td>
+            </tr>
+            <tr>
+                <td>26</td>
+                <td>B100800112</td>
+                <td>2021-01-18 09:20:59</td>
+                <td></td>
+                <td><form action="./index.php" method="get">
+                  <input type="hidden" name="del" value="B100800112" />
+                  <input type="submit" style="width:100%;height:100%;" value="実行" />
+                </form></td>
+            </tr>
+            <tr>
+                <td>27</td>
+                <td>B150400540</td>
+                <td>2021-01-18 09:21:02</td>
+                <td></td>
+                <td><form action="./index.php" method="get">
+                  <input type="hidden" name="del" value="B150400540" />
+                  <input type="submit" style="width:100%;height:100%;" value="実行" />
+                </form></td>
+            </tr>
+            <tr>
+                <td>28</td>
+                <td>B150400541</td>
+                <td>2021-01-18 09:21:04</td>
+                <td></td>
+                <td><form action="./index.php" method="get">
+                  <input type="hidden" name="del" value="B150400541" />
+                  <input type="submit" style="width:100%;height:100%;" value="実行" />
+                </form></td>
+            </tr>
+            <tr>
+                <td>29</td>
+                <td>B150400542</td>
+                <td>2021-01-18 09:21:06</td>
+                <td></td>
+                <td><form action="./index.php" method="get">
+                  <input type="hidden" name="del" value="B150400542" />
+                  <input type="submit" style="width:100%;height:100%;" value="実行" />
+                </form></td>
+            </tr>
+            <tr>
+                <td>30</td>
+                <td>B140900286</td>
+                <td>2021-01-18 09:21:09</td>
+                <td></td>
+                <td><form action="./index.php" method="get">
+                  <input type="hidden" name="del" value="B140900286" />
+                  <input type="submit" style="width:100%;height:100%;" value="実行" />
+                </form></td>
+            </tr>
+            <tr>
+                <td>31</td>
+                <td>B180900046</td>
+                <td>2021-01-18 09:21:11</td>
+                <td></td>
+                <td><form action="./index.php" method="get">
+                  <input type="hidden" name="del" value="B180900046" />
+                  <input type="submit" style="width:100%;height:100%;" value="実行" />
+                </form></td>
+            </tr>
+            <tr>
+                <td>32</td>
+                <td>B180800215</td>
+                <td>2021-01-18 09:21:16</td>
+                <td></td>
+                <td><form action="./index.php" method="get">
+                  <input type="hidden" name="del" value="B180800215" />
+                  <input type="submit" style="width:100%;height:100%;" value="実行" />
+                </form></td>
+            </tr>
+            <tr>
+                <td>33</td>
+                <td>B140900301</td>
+                <td>2021-01-18 09:21:19</td>
+                <td></td>
+                <td><form action="./index.php" method="get">
+                  <input type="hidden" name="del" value="B140900301" />
+                  <input type="submit" style="width:100%;height:100%;" value="実行" />
+                </form></td>
+            </tr>
+            <tr>
+                <td>34</td>
+                <td>B150400576</td>
+                <td>2021-01-18 09:21:22</td>
+                <td></td>
+                <td><form action="./index.php" method="get">
+                  <input type="hidden" name="del" value="B150400576" />
+                  <input type="submit" style="width:100%;height:100%;" value="実行" />
+                </form></td>
+            </tr>
+            <tr>
+                <td>35</td>
+                <td>B180800226</td>
+                <td>2021-01-18 09:21:24</td>
+                <td></td>
+                <td><form action="./index.php" method="get">
+                  <input type="hidden" name="del" value="B180800226" />
+                  <input type="submit" style="width:100%;height:100%;" value="実行" />
+                </form></td>
+            </tr>
+            <tr>
+                <td>36</td>
+                <td>B140900297</td>
+                <td>2021-01-18 09:21:27</td>
+                <td></td>
+                <td><form action="./index.php" method="get">
+                  <input type="hidden" name="del" value="B140900297" />
+                  <input type="submit" style="width:100%;height:100%;" value="実行" />
+                </form></td>
+            </tr>
+            <tr>
+                <td>37</td>
+                <td>B140900298</td>
+                <td>2021-01-18 09:21:30</td>
+                <td></td>
+                <td><form action="./index.php" method="get">
+                  <input type="hidden" name="del" value="B140900298" />
+                  <input type="submit" style="width:100%;height:100%;" value="実行" />
+                </form></td>
+            </tr>
+            <tr>
+                <td>38</td>
+                <td>B140900299</td>
+                <td>2021-01-18 09:21:32</td>
+                <td></td>
+                <td><form action="./index.php" method="get">
+                  <input type="hidden" name="del" value="B140900299" />
+                  <input type="submit" style="width:100%;height:100%;" value="実行" />
+                </form></td>
+            </tr>
+            <tr>
+                <td>39</td>
+                <td>B100800100</td>
+                <td>2021-01-18 09:21:37</td>
+                <td></td>
+                <td><form action="./index.php" method="get">
+                  <input type="hidden" name="del" value="B100800100" />
+                  <input type="submit" style="width:100%;height:100%;" value="実行" />
+                </form></td>
+            </tr>
+            <tr>
+                <td>40</td>
+                <td>B090700613</td>
+                <td>2021-01-18 09:21:40</td>
+                <td></td>
+                <td><form action="./index.php" method="get">
+                  <input type="hidden" name="del" value="B090700613" />
+                  <input type="submit" style="width:100%;height:100%;" value="実行" />
+                </form></td>
+            </tr>
+            <tr>
+                <td>41</td>
+                <td>B100800085</td>
+                <td>2021-01-18 09:21:43</td>
+                <td></td>
+                <td><form action="./index.php" method="get">
+                  <input type="hidden" name="del" value="B100800085" />
+                  <input type="submit" style="width:100%;height:100%;" value="実行" />
+                </form></td>
+            </tr>
+        </table>
+
+        <div class="clr">
+            <h2>CSVデータ出力</h2>
+            <button onclick="location.href='./download.php'">保存(utf-8)</button><button onclick="location.href='./download.php?type=s'">保存(sjis)</button><button onclick="location.href='./clear.php'">クリア</button>
+        </div>
+        <div class="clr">
+            <h2>CSVデータ比較</h2>
+            <form action="./index.php" method="post" enctype="multipart/form-data">
+              CSVファイル：<br />
+              <input type="file" name="csvfile" size="30" /><br />
+              <input type="submit" value="アップロード" />
+            </form>
+        </div>
+    </body>
+</html>
+

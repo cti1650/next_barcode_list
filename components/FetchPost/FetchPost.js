@@ -16,7 +16,11 @@ export default class FetchPost extends Component {
     let url = this.state.url;
     let data = this.state.data;
     let new_items = this.state.items;
-    const obj = {hello: "world"};
+    const obj = {
+      token:'yhD5e2m0sPgigFEoucippJFY',
+      channel:'C1WLNAC82',
+      limit:20
+    };
     const method = "POST";
     const body = Object.keys(obj).map((key)=>key+"="+encodeURIComponent(obj[key])).join("&");
     const headers = {
@@ -25,11 +29,13 @@ export default class FetchPost extends Component {
     };
     fetch(url, {method, headers, body})
       .then((res)=> res.json())
-      .then((json)=>{console.log;this.setState({
-        new_items: json
-      });})
+      .then((json)=>{
+        console.log;
+        this.setState({
+          items: json
+        });
+      })
       .catch(console.error);
-    this.setState({ items: new_items });
   }
  
   render() {
@@ -39,9 +45,6 @@ export default class FetchPost extends Component {
         <button onClick={e => this.handleClick(e)}>
           取得
         </button>
-        <div>
-          {JSON.parse(items)}
-        </div>
         <ul>
           {Object.keys(items).map(key => (
             <li key={key}>{items[key]}</li>

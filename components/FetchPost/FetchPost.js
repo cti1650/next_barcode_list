@@ -23,7 +23,12 @@ export default class FetchPost extends Component {
       'Accept': 'application/json',
       'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
     };
-    new_items = fetch(url, {method, headers, body}).then((res)=> res.json()).then(console.log).catch(console.error);
+    fetch(url, {method, headers, body})
+      .then((res)=> res.json())
+      .then((json)=>{console.log;this.setState({
+        new_items: json
+      });})
+      .catch(console.error);
     this.setState({ items: new_items });
   }
  

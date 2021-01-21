@@ -1,11 +1,12 @@
 import React, { Component } from "react";
 import ReactDOM from "react-dom";
+import axios from "axios";
  
 export default class FetchPost extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      url:'https://slack.com/api/conversations.replies',
+      url:'https://slack.com/api/search.messages?query=Next.js&count=200&pretty=1',
       data:{},
       items:{}
     };
@@ -16,18 +17,18 @@ export default class FetchPost extends Component {
     let url = this.state.url;
     let data = this.state.data;
     let new_items = this.state.items;
-    const obj = {
-      token:'yhD5e2m0sPgigFEoucippJFY',
-      channel:'C1WLNAC82',
-      limit:20
-    };
-    const method = "POST";
+    const obj = {};
+    const method = "GET";
     const body = Object.keys(obj).map((key)=>key+"="+encodeURIComponent(obj[key])).join("&");
-    const headers = {
+    const headers2 = {
       'Accept': 'application/json',
-      'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8'
+      'Content-Type': 'application/x-www-form-urlencoded; charset=utf-8',
+      'Authorization': 'Bearer xoxp-64683967046-64683967078-1675081906353-7c33e05dddc58d7a54404909dfe2381b'
     };
-    fetch(url, {method, headers, body})
+    const headers = {
+      'Authorization': 'Bearer xoxp-64683967046-64683967078-1675081906353-7c33e05dddc58d7a54404909dfe2381b'
+    };
+    fetch(url, {method, headers})
       .then((res)=> res.json())
       .then((json)=>{
         console.log(json);
@@ -37,19 +38,31 @@ export default class FetchPost extends Component {
       })
       .catch(console.error);
   }
+  getData() {
+    axios
+      .get(this.state.url,{
+        headers: {
+          Authorization: "Bearer xoxp-64683967046-64683967078-1675081906353-7c33e05dddc58d7a54404909dfe2381b"
+        }
+      })
+      .then(results => {
+        const data = results.data.content;        
+        this.setState({
+          items: data,
+        });
+      });
+  }
  
   render() {
     const { items } = this.state;
     return (
       <div>
-        <button onClick={e => this.handleClick(e)}>
+        <button onClick={e => this.getData()}>
           取得
         </button>
-        <ul>
-          {Object.keys(items).map(key => (
-            <li key={key}>{items[key]}</li>
-          ))}
-        </ul>
+        <div>
+          {JSON.stringify(items)}
+        </div>
       </div>
     );
   }

@@ -5,8 +5,10 @@ import CodeLoop from "../components/FetchPost/FetchPost";
 
 const Page = () => {
   return (
-    <CodeLoop />
-    <FetchPost />
+    <div>
+      <CodeLoop />
+      <FetchPost />
+    </div>
   );
 };
 

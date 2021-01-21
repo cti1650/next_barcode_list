@@ -30,7 +30,7 @@ export default class FetchPost extends Component {
     fetch(url, {method, headers, body})
       .then((res)=> res.json())
       .then((json)=>{
-        console.log;
+        console.log(json);
         this.setState({
           items: json
         });

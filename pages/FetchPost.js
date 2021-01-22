@@ -1,12 +1,10 @@
 // pages/post.js
 
-import FetchPost from "../components/FetchPost/FetchPost";
+import AppPage from "../components/AppPage/AppPage";
 
 const Page = () => {
   return (
-    <div>
-      <FetchPost />
-    </div>
+    <AppPage />
   );
 };
 

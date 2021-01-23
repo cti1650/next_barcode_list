@@ -2,6 +2,7 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom";
 
 import FetchPost from "../FetchPost/FetchPost";
+import ChatItemBox from "../ChatItemBox/ChatItemBox";
 
 import classes from "./AppPage.module.css";
  
@@ -20,6 +21,7 @@ export default class AppPage extends Component {
         </header>
         <main>
           <FetchPost />
+          <ChatItemBox />
         </main>
         <footer><small>Copyright © 2020 cti1650 All Rights Reserved.</small></footer>
       </div>

@@ -1,0 +1,88 @@
+.stKaiwaBox {
+    width: 100%;
+    height: auto;
+    margin-bottom: 20px;
+    display: table;
+    zoom: 1;
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", "Helvetica Neue", "Hiragino Kaku Gothic ProN", "メイリオ", meiryo, sans-serif;
+    margin: 0px;
+    padding: 0px;
+}
+.stKaiwaBox:after {
+    content: "";
+    display: block;
+    clear: both;
+}
+
+.stKaiwaFace {
+    text-align: center;
+    display: table-cell;
+    width: 60px;
+    vertical-align: top;
+}
+
+.stKaiwaFaceName {
+    color: #616161;
+    font-size: 0.2rem;
+    line-height: 1.5;
+    max-width: 60px;
+}
+
+
+.stKaiwaArea {
+    padding-top: 10px;
+}
+
+.stKaiwaArea {
+    display: table-cell;
+    vertical-align: top;
+    text-align: left;
+}
+
+.stKaiwaHukidashi:after {
+    border-color: transparent #f4f4f4 transparent transparent;
+}
+.stKaiwaHukidashi:after {
+    content: "";
+    position: absolute;
+    top: 30px;
+    left: -10px;
+    margin-top: -10px;
+    display: block;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 10px 10px 10px 0;
+    border-color: transparent #f9f9f9 transparent transparent;
+}
+.stKaiwaArea {
+    display: table-cell;
+    vertical-align: top;
+    text-align: left;
+}
+.stKaiwaHukidashi, .st-kaiwa-hukidashi2 {
+    background-color: #f4f4f4;
+}
+.stKaiwaHukidashi, .st-kaiwa-hukidashi2 {
+    border-radius: 0;
+}
+.stKaiwaHukidashi {
+    display: inline-block;
+    padding: 15px 20px;
+    margin-left: 20px;
+    border-radius: 7px;
+    position: relative;
+    background-color: #f9f9f9;
+}
+.stKaiwaHukidashi, .st-kaiwa-hukidashi2 {
+    font-size: 18px;
+    line-height: 30px;
+}
+.stKaiwaFace2 img, .stKaiwaFace img {
+    width: 60px!important;
+}
+
+.stKaiwaFace img {
+    border-radius: 60px;
+    border: 1px solid #ccc;
+}

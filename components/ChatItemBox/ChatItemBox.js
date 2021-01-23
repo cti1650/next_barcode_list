@@ -6,9 +6,9 @@ export default class ChatItemBox extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      name:'アフィラ',
-      img:'https://afila0.com/wp-content/uploads/2020/12/afila_black-min.jpg',
-      comment:'サイトによるけど、基本テキストリンクの方が高い'
+      name:'test',
+      img:'',
+      comment:'コメントを表示するサンプルコンポーネントです。'
     };
   }
   render() {

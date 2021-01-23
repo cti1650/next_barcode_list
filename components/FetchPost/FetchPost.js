@@ -39,7 +39,6 @@ export default class FetchPost extends Component {
     let mailTo = "";
     return (
       <div>
-        <h2>メッセージ取得 API取得動作検証</h2>
         <div>
           {Object.keys(items).map(key => (
             <details key={key}>

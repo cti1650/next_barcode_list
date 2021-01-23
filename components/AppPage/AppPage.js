@@ -9,14 +9,14 @@ export default class AppPage extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      title:'test'
+      title:'メッセージ取得 API取得動作検証'
     };
   }
   render() {
     return (
       <div className={classes.Page}>
         <header>
-          <h1>{this.state.title}</h1>
+          <h2>{this.state.title}</h2>
         </header>
         <main>
           <FetchPost />

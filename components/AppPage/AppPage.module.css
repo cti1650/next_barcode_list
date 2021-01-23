@@ -1,8 +1,8 @@
 .Page {
     font-size:2rem;
     max-width:800px;
-    min-width:400px;
     margin: 0 auto;
+    padding:10px;
     display: grid;
     grid-template:
         "... ...... ..." 0px
@@ -14,17 +14,20 @@
         "... ...... ..." 0px
         / 0px 1fr 0px;
 }
-.Page header {
+.Page > header {
     grid-area: header;
 }
-.Page main {
+.Page > main {
     grid-area: center;
 }
-.Page footer {
+.Page > footer {
     grid-area: footer;
+    text-align: center;
 }
+
 @media screen and (max-width: 1000px){
     .Page {
+        min-width:400px;
         grid-template:
             "header"
             "center" 1fr

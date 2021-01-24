@@ -12,6 +12,7 @@ export default class ChatItems extends Component {
 
   render() {
     const { items } = this.state;
+    console.log(items);
     return (
       <div>
         {Object.keys(items).map(key => (

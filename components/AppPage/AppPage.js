@@ -21,7 +21,6 @@ export default class AppPage extends Component {
     this.setState({
       items: users,
     });
-    console.log();
   };
 
   componentDidMount() {
@@ -48,7 +47,7 @@ export default class AppPage extends Component {
         </header>
         <main>
           <FetchPost />
-          <ChatItems Comments={this.state.items}/>
+          <ChatItems Comments={items}/>
           <ChatItemAdd />
         </main>
         <footer><small>Copyright © 2020 cti1650 All Rights Reserved.</small></footer>

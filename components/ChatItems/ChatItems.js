@@ -9,6 +9,7 @@ export default class ChatItems extends Component {
       items:props.Comments
     };
   }
+
   render() {
     const { items } = this.state;
     return (

@@ -23,7 +23,8 @@
 
 .stKaiwaFaceName {
     color: #616161;
-    font-size: 0.2rem;
+    margin-top:1.5rem;
+    font-size: 1rem;
     line-height: 1.5;
     max-width: 60px;
 }
@@ -35,8 +36,15 @@
 
 .stKaiwaArea {
     display: table-cell;
+    padding-top: 10px;
     vertical-align: top;
     text-align: left;
+}
+.stKaiwaArea2 {
+    display: table-cell;
+    padding-top: 10px;
+    vertical-align: top;
+    text-align: right;
 }
 
 .stKaiwaHukidashi:after {
@@ -55,15 +63,29 @@
     border-width: 10px 10px 10px 0;
     border-color: transparent #f9f9f9 transparent transparent;
 }
-.stKaiwaArea {
-    display: table-cell;
-    vertical-align: top;
-    text-align: left;
+.stKaiwaHukidashi2:after {
+    border-color: transparent transparent transparent #f4f4f4;
 }
-.stKaiwaHukidashi, .st-kaiwa-hukidashi2 {
+
+.stKaiwaHukidashi2:after {
+    content: "";
+    position: absolute;
+    top: 30px;
+    right: -10px;
+    margin-top: -10px;
+    display: block;
+    width: 0px;
+    height: 0px;
+    border-style: solid;
+    border-width: 10px 0 10px 10px;
+    border-color: transparent transparent transparent #f9f9f9;
+}
+
+.stKaiwaHukidashi, .stKaiwaHukidashi2 {
     background-color: #f4f4f4;
+    white-space: pre-line;
 }
-.stKaiwaHukidashi, .st-kaiwa-hukidashi2 {
+.stKaiwaHukidashi, .stKaiwaHukidashi2 {
     border-radius: 0;
 }
 .stKaiwaHukidashi {
@@ -74,7 +96,17 @@
     position: relative;
     background-color: #f9f9f9;
 }
-.stKaiwaHukidashi, .st-kaiwa-hukidashi2 {
+
+.stKaiwaHukidashi2 {
+    display: inline-block;
+    padding: 15px 20px;
+    margin-right: 20px;
+    border-radius: 7px;
+    position: relative;
+    background-color: #f9f9f9;
+    text-align: left;
+}
+.stKaiwaHukidashi, .stKaiwaHukidashi2 {
     font-size: 18px;
     line-height: 30px;
 }

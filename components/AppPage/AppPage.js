@@ -2,7 +2,7 @@ import React, { Component } from "react";
 import ReactDOM from "react-dom";
 
 import FetchPost from "../FetchPost/FetchPost";
-import ChatItemBox from "../ChatItemBox/ChatItemBox";
+import ChatItems from "../ChatItems/ChatItems";
 
 import classes from "./AppPage.module.css";
  
@@ -14,6 +14,12 @@ export default class AppPage extends Component {
     };
   }
   render() {
+    const items = [
+      { 'mine' : true , 'name' : 'test1' , 'comment' : 'テスト１\nテスト成功！' },
+      { 'mine' : false , 'name' : 'test2' , 'comment' : 'テスト２' },
+      { 'mine' : true , 'name' : 'test3' , 'comment' : 'テスト３' },
+      { 'mine' : false , 'name' : 'test4' , 'comment' : 'テスト４' }
+    ]
     return (
       <div className={classes.Page}>
         <header>
@@ -21,7 +27,7 @@ export default class AppPage extends Component {
         </header>
         <main>
           <FetchPost />
-          <ChatItemBox />
+          <ChatItems Comments={items}/>
         </main>
         <footer><small>Copyright © 2020 cti1650 All Rights Reserved.</small></footer>
       </div>

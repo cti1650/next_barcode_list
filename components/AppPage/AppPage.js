@@ -47,7 +47,7 @@ export default class AppPage extends Component {
         </header>
         <main>
           <FetchPost />
-          <ChatItems Comments={items}/>
+          <ChatItems Comments={this.state.items}/>
           <ChatItemAdd />
         </main>
         <footer><small>Copyright © 2020 cti1650 All Rights Reserved.</small></footer>

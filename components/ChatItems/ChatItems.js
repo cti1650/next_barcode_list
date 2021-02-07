@@ -6,17 +6,16 @@ export default class ChatItems extends Component {
   constructor(props) {
     super(props);
     this.state = {
-      items:props.Comments
+      items: props.Comments,
     };
   }
 
   render() {
     const { items } = this.state;
-    console.log(items);
     return (
       <div>
-        {Object.keys(items).map(key => (
-          <ChatItemBox {...items[key]}/>
+        {Object.keys(items).map((key) => (
+          <ChatItemBox {...items[key]} />
         ))}
       </div>
     );
